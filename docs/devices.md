@@ -65,7 +65,7 @@ Combinazione dei due valori → determina la richiesta finale al DB.
 
 ## 1.4 Interfaccia utente (icone e logiche)
 
-![Fiamma rossa (images/fiamma_rossa.jpg)]
+images/fiamma_rossa.jpg
 images/fiamma_gialla.jpg
 images/termostufa.jpg
 Ogni termostato visualizza un'icona specifica per la fonte del calore:
