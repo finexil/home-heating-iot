@@ -30,9 +30,9 @@ L’ESP32 permette di isolare ogni componente in un **task dedicato**, evitando 
 - Display **TFT 3.5" SPI** con touch resistivo (driver XPT2046)
 - Sensori:
   - **BME280**: temperatura / umidità / pressione
-  - **MQ-135**: qualità aria (TVOC/CO₂ stimato)
-  - eventuale sensore luminosità per la retroilluminazione
-- Alimentazione: 5V → regolazione a 3.3V
+  - **CCS811**: qualità aria (TVOC/CO₂ stimato)
+  - regolatore LED display per spegnimento automatico dopo 1' e 30"
+- Alimentazione: 5V → regolazione a 3.3V tramite l'MCU, uscita 3,3V
 - Clock: 240 MHz
 
 ---
@@ -47,23 +47,28 @@ L’ESP32 permette di isolare ogni componente in un **task dedicato**, evitando 
 | RESET    | 4         |
 | DC       | 2         |
 | MOSI     | 23        |
-| MISO     | 19        |
+| MISO     | N.C.      |
 | SCK      | 18        |
-| LED      | 15        |
+| LED      | 16*       |
 
+* Il pin 16 pilota un transistor e non direttamente il LED
+  
 ### Touch (XPT2046)
 
 | Funzione | ESP32 Pin |
 |----------|-----------|
-| T_CS     | 14        |
-| T_IRQ    | 27        |
+| T_CS     | 15        |
+| T_CLK    | 18        |
+| T_DIN    | 23        |
+| T_D0     | 19        |
+| T_IRQ    | N.C.      |
 
 ### Sensori
 
-| Sensore | Pin |
-|--------|------|
-| BME280 (I2C) | SDA=21, SCL=22 |
-| MQ-135 | ADC PIN (es: 34) |
+| Sensore | Pin | Address |
+|---------|-----|---------|
+| BME280 (I2C) | SDA=21, SCL=22 | 0x77, 0x76 | 
+| CCS811 (I2C) | SDA=21, SCL=22, WAC=GND| 0x5A |
 
 ---
 
@@ -77,95 +82,72 @@ Il firmware è strutturato su più task paralleli:
 - applica filtri e stabilizzazione valori  
 - aggiorna variabili condivise thread-safe  
 
-Periodo: **500 ms**
+Periodo: **100 ms**
 
 ---
 
-## ✅ 4.2 task_display (priorità media)
-Aggiorna:
+## ✅ 4.2 task_DB (priorità media)
+Gestisce tutte le chiamate al DB:
 
-- temperatura corrente  
-- icone (rossa/gialla/stufa)  
-- grafico miniaturizzato 24h  
-- stato WiFi  
-- previsioni meteo a 6 ore  
-- pagina attiva
+- INSERT 
+- UPDATE  
+- SELECT  
+Le stringhe SQL sono memorizzate in una struttura condivisa tra i task
 
-Periodo: **200–300 ms**
+Periodo: **100**
 
 ---
 
-## ✅ 4.3 task_touch (priorità media)
-Gestisce:
+## ✅ 4.3 task_Time (priorità media)
+Gestisce date e ora nonchè il cambio ora legale/solare:
 
-- tocchi sul display  
-- cambio pagina  
-- attivazione schermate speciali  
-- forzature riscaldamento  
-- regolazione retroilluminazione in base al tempo o touch
-
----
-
-## ✅ 4.4 task_net (bassa priorità)
-Invia i dati al server:
-
-- temperatura media ogni 10 minuti  
-- umidità  
-- qualità aria  
-- stato riscaldamento  
-- lettura configurazione oraria
-
-Esegue HTTP e parsing JSON con priorità bassa per non disturbare UI e sensori.
-
-Periodo: **10 minuti / on-demand**
+- Timer di innesco attività (1', 10', 24 ore)  
+- Timer per lettura sensori ambiente  
+- Timer per spegnimento automatico del LED Display dopo 1'30" di inattività  
+- Timer aggiornamento dello stato e temperatura termostati dell'impianto   
+- Timer aggiornamento potenza segnale Wifi
+- Timer verifica connessione Wifi
+- Timer aggiornamento previsioni
+- Timer lettura Temperature orarie impostate nel DB per il termostato
 
 ---
 
-## ✅ 4.5 task_logiche (priorità media)
-Funzioni:
+## ✅ 4.4 task_Loop (default)
+Gestisce la normale funzionalità del termostato, del display e del touch:
 
-- valuta WARM_STATE  
-- applica WARM_FORCE  
-- aggiorna icone a seconda di:  
-  - extra heating  
-  - termostufa  
-  - configurazione oraria  
-- implementa euristiche locali (es: smoothing della temperatura)
+- Gestione stati e forzature 
+- Gestione grafica del display  
+- Aggiornamento previsioni Meteo 
+- Aggiornamento Grafici  
 
-Periodo: **1 secondo**
+Periodo: **100 ms**
 
 ---
 
 # 5. Interfaccia Grafica (UI)
 
 ### ✅ Schermata principale
-- Temperatura grande  
+- Temperatura locale  
 - Umidità  
 - Qualità aria (barra CO₂/TVOC)  
 - Icona riscaldamento (rossa/gialla/stufa)  
 - Orario locale  
 - Stato WiFi
+- Temperatura esterna
+- Temperatura oraria impostata
+- Previsioni Meteo (delle prossime 6 ore)
+- Qualità dell'aria
 
 ### ✅ Schermata grafico 24h
-- grafico storico (preparato sul server e inviato come array oppure richiesto via HTTP)  
+- grafico storico della temperatura e umidità locali rilevate e di quella esterna (ogni 10')  
 - minima/massima  
-- trend
+- Grafico configurazione oraria del termostato con linea andamento temperatura ambiente
 
-### ✅ Schermata info ambiente
-- pressione atmosferica  
-- indice qualità aria  
-- intensità segnale WiFi  
-- uptime del termostato
+### ✅ Schermata stato zone
+Vista con icone dello stato e della temperatura dei termostati dell'impianto
 
-### ✅ Previsioni meteo integrate (6 ore)
-Viste solo nella versione ESP32:
-
-- icona meteo  
-- temperatura prevista  
-- percentuale di precipitazioni  
-- condizioni (sole/velato/pioggia)
-
-Le previsioni provengono dal Raspberry Pi.
+- icona termostato con colore rosso per riscaldamento attivo e verde per spento 
+- temperatura della singola zona 
 
 ---
 
@@ -187,23 +169,29 @@ Le logiche:
 
 ---
 
-# 7. Comunicazione col server
+# 7. Comunicazione col server (DB)
 
-## ✅ Invio temperatura, umidità, qualità aria
+Utilizzata per le board ESP32 la libreria ESP32_MySQL.h https://github.com/Syafiqlim/ESP32_MySQL
+## ✅ Invio temperatura, umidità e pressione
 
-/update_temp.php?room=p1_soggiorno&temp=20.9&hum=47&co2=540
+sprintf(db_command[pt_stack_db_write].STRING_SQL, "INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f);", room[my_room_number], tf, hf, pf);
 
 ## ✅ Invio stato riscaldamento
 
-/update_state.php?room=p1_soggiorno&state=1
+sprintf(db_command[pt_stack_db_write].STRING_SQL, "INSERT INTO temperature.Warming_state (room, FLG_ON, FLG_FORCE) VALUES ('%s', %d, %d);", room[my_room_number], heating_status, heating_mode);
 
 ## ✅ Ricezione configurazione oraria
 
-/get_config.php?room=p1_soggiorno
+sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT * FROM temperature.TermostatSetup where room='%s';", room[my_room_number]);
+
+## ✅ Ricezione Stato e Temperatura Termostati
+
+sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT `pt soggiorno`, `pt camera`, `pt bagno`, `p1 soggiorno`, `p1 camera`, `p1 bagno`, `te terrazzo` FROM temperature.termostat_temp_now WHERE location='%s';", location);
+sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT pt_soggiorno, pt_camera, pt_bagno, p1_soggiorno, p1_camera, p1_bagno, te_terrazzo FROM temperature.zone_status WHERE location='%s';", location);
 
 ## ✅ Ricezione previsioni meteo
 
-/get_forecast.php
+sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT temperature, wind_speed, icon, description FROM weather.forecasts WHERE timestamp = (SELECT MIN(timestamp) FROM weather.forecasts WHERE timestamp > CURRENT_TIMESTAMP());");
 
 ---
 
@@ -222,7 +210,7 @@ Il firmware include:
 
 # 9. Logging e debug
 
-La seriale emette:
+La seriale emette con diversi livelli di verbosità configurabili:
 
 - valori dei sensori  
 - stato rete  
