@@ -159,7 +159,7 @@ Le icone sono identiche alla versione ESP32 e indicano la fonte di calore:
 
 | Icona | Descrizione |
 |-------|-------------|
-| 🔥 (rossa) | richiesta locale (configurazione oraria) |
+| ![(rossa)](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/fiamma_rossa.jpg)  | richiesta locale (configurazione oraria) |
 | 🔶 (gialla) | extra heating da fotovoltaico |
 | 🪵 (stufa) | riscaldamento da termostufa |
 
