@@ -29,7 +29,7 @@ Questa tabella viene letta dai controller delle elettrovalvole.
 
 ## ✅ Definizione trigger Update_termostat_warming_request
 
-```sql
+`sql
 CREATE TRIGGER Update_termostat_warming_request
 AFTER INSERT ON Warming_state
 FOR EACH ROW
