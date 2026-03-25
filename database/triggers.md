@@ -75,7 +75,8 @@ BEGIN
         SET `te_terrazzo` = NEW.FLG_ON
         WHERE location = 'ceresole';
     END IF;
-END;```
+END;
+```
 
 ---
 
@@ -105,7 +106,8 @@ BEGIN
         `humidity`    = NEW.humidity,
         `pressure`    = 0
     WHERE location = 'ceresole';
-END;```
+END;
+```
 
 ---
 
@@ -172,7 +174,8 @@ BEGIN
         SET `te terrazzo` = NEW.temperature
         WHERE location = 'ceresole';
     END IF;
-END;```
+END;
+```
 
 ---
 
