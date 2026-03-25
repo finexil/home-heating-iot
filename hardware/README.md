@@ -4,7 +4,7 @@
 Questa cartella contiene tutti gli schemi elettrici e i riferimenti hardware degli apparati:
 
 ## 📟 Termostati
-- ![ESP8266 con display 1.8”](ESP8266_Controller_Elettrovalvole.png)
+- ![ESP8266 con display 1.8”](./ESP8266_Controller_Elettrovalvole.png)
 - ESP32 con display 3.5” touch
 
 ## 🔧 Controller
