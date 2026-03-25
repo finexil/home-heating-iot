@@ -29,7 +29,7 @@ Questa tabella viene letta dai controller delle elettrovalvole.
 
 ## ✅ Definizione trigger Update_termostat_warming_request
 
-sql
+'sql
 CREATE TRIGGER Update_termostat_warming_request
 AFTER INSERT ON Warming_state
 FOR EACH ROW
@@ -95,7 +95,7 @@ lo memorizza nella tabella external_temp_hum_now
 
 ## ✅ Definizione trigger Update_external_temp_hum_now
 
-```sql
+`sql
 CREATE TRIGGER Update_external_temp_hum_now
 AFTER INSERT ON external_temp_hum
 FOR EACH ROW
@@ -107,7 +107,7 @@ BEGIN
         `pressure`    = 0
     WHERE location = 'ceresole';
 END;
-'''
+
 # 3. Trigger su `powerDetails` → `aggiorna termostat_temp_now`
 
 La tabella powerDetails (nome storico) riceve i dati temperatura/umidità dei termostati.
