@@ -80,7 +80,7 @@ END;
 
 ---
 
-# 2. Trigger su `external_temp_hum → aggiorna external_temp_hum_now`
+# 2. Trigger su `external_temp_hum` → `aggiorna external_temp_hum_now`
 
 Il sensore esterno invia una riga ogni 10 minuti.
 Il trigger aggiorna la tabella “now”, così i dispositivi che leggono il meteo esterno
@@ -108,7 +108,7 @@ BEGIN
     WHERE location = 'ceresole';
 END;
 
-# 3. Trigger su `powerDetails → aggiorna termostat_temp_now`
+# 3. Trigger su `powerDetails` → `aggiorna termostat_temp_now`
 
 La tabella powerDetails (nome storico) riceve i dati temperatura/umidità dei termostati.
 Il trigger aggiorna immediatamente i valori nella tabella “now”, così l’interfaccia web del Raspberry
