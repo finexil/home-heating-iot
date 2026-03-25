@@ -66,7 +66,8 @@ Combinazione dei due valori → determina la richiesta finale al DB.
 ## 1.4 Interfaccia utente (icone e logiche)
 Ogni termostato visualizza un'icona specifica per la fonte del calore:
 
-- ![Fiamma rossa](./images/fiamma_rossa.jpg) **Fiamma rossa** → Richiesta locale in base alla configurazione oraria  
+- <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" />
+ **Fiamma rossa** → Richiesta locale in base alla configurazione oraria  
 - ![Fiamma gialla](./images/fiamma_gialla.jpg) **Fiamma gialla** → Extra Heating (energia fotovoltaica)  
 - ![termostufa](./images/termostufa.jpg) **termostufa** → Riscaldamento da termostufa
 
