@@ -108,6 +108,8 @@ BEGIN
     WHERE location = 'ceresole';
 END;
 
+---
+
 # 3. Trigger su `powerDetails` → `aggiorna termostat_temp_now`
 
 La tabella powerDetails (nome storico) riceve i dati temperatura/umidità dei termostati.
@@ -124,7 +126,7 @@ attive sul raspberry.
 e temperatura con la verifica che la location sia quella corretta.
 
 ## ✅ Definizione trigger powerDetails_after_insert
-```sql
+`sql
 CREATE TRIGGER powerDetails_after_insert
 AFTER INSERT ON powerDetails
 FOR EACH ROW
@@ -174,6 +176,8 @@ BEGIN
 
 END;
 
+---
+
 # 4. Perché i trigger sono fondamentali?
 ✅ Riduzione del traffico di rete
 Gli ESP8266/ESP32 leggono una sola riga invece di centinaia.
@@ -183,6 +187,8 @@ Una sola tabella contiene lo stato aggiornato.
 Il logic “who controls what” è nel Raspberry, non nei dispositivi.
 ✅ Aggiornamenti immediati
 Ogni variazione di un termostato si propaga istantaneamente a tutta l’architettura.
+
+---
 
 # 5. Diagramma del ciclo dei trigger
 [Termostato] 
@@ -196,6 +202,8 @@ Ogni variazione di un termostato si propaga istantaneamente a tutta l’architet
 [Sensore esterno]
    → INSERT in external_temp_hum
       → Trigger → aggiorna external_temp_hum_now
+
+---
 
 # 6. File correlati
 
