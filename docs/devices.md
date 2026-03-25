@@ -66,10 +66,9 @@ Combinazione dei due valori → determina la richiesta finale al DB.
 ## 1.4 Interfaccia utente (icone e logiche)
 Ogni termostato visualizza un'icona specifica per la fonte del calore:
 
-- <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" />
- **Fiamma rossa** → Richiesta locale in base alla configurazione oraria  
-- ![Fiamma gialla](./images/fiamma_gialla.jpg) **Fiamma gialla** → Extra Heating (energia fotovoltaica)  
-- ![termostufa](./images/termostufa.jpg) **termostufa** → Riscaldamento da termostufa
+- <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" />  **Fiamma rossa** → Richiesta locale in base alla configurazione oraria  
+- <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/6389740f-86ea-4227-b1d1-031ebf1e72d3" />  **Fiamma gialla** → Extra Heating (energia fotovoltaica)  
+- <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/53d6b121-8ec9-4bc0-9891-884fe79045de" />  **termostufa** → Riscaldamento da termostufa
 
 Le modalità Extra Heating e Termostufa forzano il riscaldamento **in tutte le zone**,  
 ma interrompono automaticamente quando la temperatura locale supera **22°C**.
