@@ -43,6 +43,7 @@ La comunicazione tra ESP e Raspberry Pi avviene tramite:
 
 Esempi:
 /update_temp.php?room=pt_soggiorno&temp=21.3&hum=45
+
 /get_warming_state.php?room=pt_soggiorno
 
 ---
