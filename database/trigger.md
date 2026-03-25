@@ -77,7 +77,7 @@ BEGIN
     END IF;
 
 END;
-
+'''
 ---
 
 # 2. Trigger su `external_temp_hum` → `aggiorna external_temp_hum_now`
@@ -107,7 +107,7 @@ BEGIN
         `pressure`    = 0
     WHERE location = 'ceresole';
 END;
-
+'''
 # 3. Trigger su `powerDetails` → `aggiorna termostat_temp_now`
 
 La tabella powerDetails (nome storico) riceve i dati temperatura/umidità dei termostati.
