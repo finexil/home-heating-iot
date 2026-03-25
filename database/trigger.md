@@ -77,7 +77,7 @@ BEGIN
     END IF;
 
 END;
-'''
+
 ---
 
 # 2. Trigger su `external_temp_hum` → `aggiorna external_temp_hum_now`
