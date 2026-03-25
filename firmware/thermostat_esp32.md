@@ -175,9 +175,9 @@ Il termostato ESP32 mostra la fonte del calore in modo dinamico:
 
 | Icona | Significato |
 |-------|-------------|
-| <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" /> (rossa)  | richiesta locale (configurazione oraria) |
-| <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/6389740f-86ea-4227-b1d1-031ebf1e72d3" /> (gialla) | extra heating da fotovoltaico |
-| <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/53d6b121-8ec9-4bc0-9891-884fe79045de" /> (stufa) | riscaldamento da termostufa |
+| <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" /> | richiesta locale (configurazione oraria) |
+| <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/6389740f-86ea-4227-b1d1-031ebf1e72d3" /> | extra heating da fotovoltaico |
+| <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/53d6b121-8ec9-4bc0-9891-884fe79045de" /> | riscaldamento da termostufa |
 
 Le logiche:
 
