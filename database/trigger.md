@@ -95,6 +95,7 @@ lo memorizza nella tabella external_temp_hum_now
 
 ## ✅ Definizione trigger Update_external_temp_hum_now
 
+```sql
 CREATE TRIGGER Update_external_temp_hum_now
 AFTER INSERT ON external_temp_hum
 FOR EACH ROW
@@ -123,7 +124,7 @@ attive sul raspberry.
 e temperatura con la verifica che la location sia quella corretta.
 
 ## ✅ Definizione trigger powerDetails_after_insert
-
+```sql
 CREATE TRIGGER powerDetails_after_insert
 AFTER INSERT ON powerDetails
 FOR EACH ROW
