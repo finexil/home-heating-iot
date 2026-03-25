@@ -131,14 +131,14 @@ Sono gli unici a usare tutto il database in profondità.
 ---
 
 # 4. Diagramma completo del flusso dati
-            ┌───────────────────┐
+            ┌────────────────────┐
             │     Termostati     │
             │ ESP8266 / ESP32    │
             └───────┬────────────┘
                     │ INSERT
                     ▼
             ┌───────────────────┐
-            │   Warming_state    │─────┐
+            │   Warming_state   │──────┐
             └───────────────────┘      │ trigger
                                        ▼
                             ┌────────────────────────────┐
@@ -167,7 +167,7 @@ Sono gli unici a usare tutto il database in profondità.
                               │
                               ▼
                  ┌───────────────────────────────┐
-                 │   Algoritmi Raspberry Pi       │
+                 │   Algoritmi Raspberry Pi      │
                  └───────────────────────────────┘
 
 
