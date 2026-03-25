@@ -171,7 +171,7 @@ Le logiche:
 
 # 7. Comunicazione col server (DB)
 
-Utilizzata per le board ESP32 la libreria ESP32_MySQL.h https://github.com/Syafiqlim/ESP32_MySQL
+Utilizzata per le board ESP32 la libreria  ![ESP32_MySQL](https://github.com/Syafiqlim/ESP32_MySQL)
 ## ✅ Invio temperatura, umidità e pressione
 
 sprintf(db_command[pt_stack_db_write].STRING_SQL, "INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f);", room[my_room_number], tf, hf, pf);
