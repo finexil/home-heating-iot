@@ -106,29 +106,28 @@ NORMAL    → WARM_STATE
 
 # 5. Comunicazione con il database
 
-L’ESP8266 usa HTTP GET verso endpoint PHP sul Raspberry Pi.
+L’ESP8266 usa la libreria MySQL_Generic.h di MySQL_MariaDB_Generic nelle funzioni di INSERT, UPDATE e SELECT.
 
 ## 5.1 Invia temperatura media (ogni 10 minuti)
 
-
-/update_temp.php?room=pt_camera&temp=21.4&hum=46
+sprintf(STRING_SQL, "INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f)", room[my_room_number], tf, hf, 0.0);
 
 ## 5.2 Invia stato riscaldamento
 
-
-/update_state.php?room=pt_camera&state=1
+sprintf(STRING_SQL, "INSERT INTO temperature.Warming_state (room, FLG_ON, FLG_FORCE) VALUES ('%s', %d, %d)", room[my_room_number], heating_status, heating_mode);
 
 ## 5.3 Riceve configurazione oraria
 
-
-/get_config.php?room=pt_camera
+sprintf(STRING_SQL, "SELECT * FROM temperature.TermostatSetup WHERE room='%s';", room[my_room_number]);
 
 La logica PHP aggiorna le tabelle:
 
 - `termostat_temp_hum`
 - `Warming_state`
 
-I trigger si occupano del resto.
+I trigger si occupano dell'aggiornamento delle tabelle:
+- `termostat_temp_hum`
+- `Warming_state`
 
 ---
 
@@ -139,13 +138,18 @@ I trigger si occupano del resto.
 1. **Schermata principale**
    - Temperatura attuale
    - Umidità
+   - Temperatura esterna
+   - Temperatura oraria impostata
    - Icona fonte calore
+   - Icone potenza segnale Wifi
 2. **Grafico 24 ore**
-   - Mini-grafico della temperatura
+   - Mini-grafico della temperatura e dell'umidità
+   - Mini grafico con l'impostazione oraria delle temperature e andamento della temperatura della zona
 3. **Schermata info**
    - Indirizzo IP
-   - Potenza WiFi
+   - Stato della connessione al DB
    - Versione firmware
+   - timestamp ultimo boot
 
 ---
 
