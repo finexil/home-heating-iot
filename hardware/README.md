@@ -13,7 +13,7 @@ Questa cartella contiene tutti gli schemi elettrici e i riferimenti hardware deg
 - Controller termostufa
 
 ## 🔋 Alimentazione
-Schema dell’alimentazione centralizzata a 5V e 12V.
+L'alimentatore di tutti gli elementi (Termostati e Controller) è centralizzata tramite un alimentatore switching che eroga 5V e 12V con corrente massima di 5A. Tutte le schede sono collegate all'alimentatore con cavo multicoppia steso in canalina. Questa soluzione permette di evitare l'uso di batterie per ogni sistema locale.
 
 ## 🖼️ Schemi elettrici
 Gli schemi sono presenti nella sotto-cartella `hardware/` e possono essere inclusi nella documentazione tecnica.
