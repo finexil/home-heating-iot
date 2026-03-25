@@ -75,8 +75,8 @@ BEGIN
         SET `te_terrazzo` = NEW.FLG_ON
         WHERE location = 'ceresole';
     END IF;
-END;
-``
+END;```
+
 ---
 
 # 2. Trigger su `external_temp_hum` → `aggiorna external_temp_hum_now`
@@ -105,8 +105,8 @@ BEGIN
         `humidity`    = NEW.humidity,
         `pressure`    = 0
     WHERE location = 'ceresole';
-END;
-``
+END;```
+
 ---
 
 # 3. Trigger su `powerDetails` → `aggiorna termostat_temp_now`
@@ -172,8 +172,8 @@ BEGIN
         SET `te terrazzo` = NEW.temperature
         WHERE location = 'ceresole';
     END IF;
-END;
-``
+END;```
+
 ---
 
 # 4. Perché i trigger sono fondamentali?
