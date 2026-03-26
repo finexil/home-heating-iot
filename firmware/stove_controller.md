@@ -131,10 +131,15 @@ UPDATE temperature.TermostatSetup SET f1=1 WHERE room LIKE '%%terrazzo';
 Ogni 40 ms/6 s:
 
 LOOP PRINCIPALE
+
     → Leggi temperatura acqua
+    
     → Leggi stato_stufa (gestione hysteresis)
+    
     → Se cambio stato è confermato dopo timeout:
+    
          → UPDATE tabella termostufa (campo stove_on)
+         
          → Log variazione
 
 Il delay del loop principale è configurato per cambiare a secnda se la termostufa sia attiva o disattiva, in pratica se la termostufa
