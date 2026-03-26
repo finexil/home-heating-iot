@@ -42,13 +42,13 @@ Il dispositivo è progettato per essere **robusto**, **reattivo** e **semplice d
 | Funzione | Pin ESP8266 | Note |
 |---------|-------------|------|
 | Display CS  | D2 | SPI |
-| Display A0/DC | D1 | SPI |
-| Display RESET | D0 | Reset logico |
+| Display A0/DC | D4 | SPI |
+| Display RESET | D3 | Reset logico |
 | SPI SCK | D5 | Standard |
 | SPI MOSI | D7 | Standard |
-| SPI MISO | D6 | *non usato dal display* |
-| Sensore DHT22 | D3 | Lettura temperatura/umidità |
-| Pulsante PAGE | D4 | Pulldown |
+| SPI MISO | N.C. | *non usato dal display* |
+| Sensore DHT22 | D1 | Lettura temperatura/umidità |
+| Pulsante PAGE | D6 | Pulldown |
 | Pulsante FORCE | D8 | Pulldown |
 | WiFi | Interno | Sempre attivo |
 
@@ -110,24 +110,30 @@ L’ESP8266 usa la libreria MySQL_Generic.h di MySQL_MariaDB_Generic nelle funzi
 
 ## 5.1 Invia temperatura media (ogni 10 minuti)
 
-"INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f)", room[my_room_number], tf, hf, 0.0
+```sql
+"INSERT INTO temperature.powerDetails
+(room, Temperature, Humidity, Pressure)
+VALUES ('%s', %.3f, %.3f, %.3f);", room[my_room_number], tf, hf, 0.0
+```
 
 ## 5.2 Invia stato riscaldamento
 
-"INSERT INTO temperature.Warming_state (room, FLG_ON, FLG_FORCE) VALUES ('%s', %d, %d)", room[my_room_number], heating_status, heating_mode
+```sql
+"INSERT INTO temperature.Warming_state
+(room, FLG_ON, FLG_FORCE)
+VALUES ('%s', %d, %d)", room[my_room_number], heating_status, heating_mode
+```
 
 ## 5.3 Riceve configurazione oraria
 
-"SELECT * FROM temperature.TermostatSetup WHERE room='%s';", room[my_room_number]
+```sql
+"SELECT * FROM temperature.TermostatSetup
+WHERE room='%s';", room[my_room_number]
+```
 
-La logica PHP aggiorna le tabelle:
-
-- `termostat_temp_hum`
-- `Warming_state`
-
-I trigger si occupano dell'aggiornamento delle tabelle:
-- `termostat_temp_hum`
-- `Warming_state`
+Questa tabella contiene l'impostazione oraria e i due flag per le forzature da Extra Heating e Termostufa:
+- Extra Heating F0
+- Termostufa F1
 
 ---
 
