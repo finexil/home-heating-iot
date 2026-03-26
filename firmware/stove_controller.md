@@ -100,6 +100,7 @@ VALUE ('## stato termostufa ##', 0/1, 0/1);
   - soggiorno p1
   - soggiorno pt
   - terrazzo (è il nome di un locale chiuso ex fienile)
+    
 Questi raggruppamenti sono pensati per attivare le varie zone con tempi diversi così da non stressare troppo il riscaldamento dell'acqua da parte della termostufa.
 L'impostazione del valore a 0 (termostufa spenta) avviene in contemporanea su tutte le zone.
 
