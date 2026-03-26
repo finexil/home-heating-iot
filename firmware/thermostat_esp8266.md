@@ -110,15 +110,15 @@ L’ESP8266 usa la libreria MySQL_Generic.h di MySQL_MariaDB_Generic nelle funzi
 
 ## 5.1 Invia temperatura media (ogni 10 minuti)
 
-sprintf(STRING_SQL, "INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f)", room[my_room_number], tf, hf, 0.0);
+"INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f)", room[my_room_number], tf, hf, 0.0
 
 ## 5.2 Invia stato riscaldamento
 
-sprintf(STRING_SQL, "INSERT INTO temperature.Warming_state (room, FLG_ON, FLG_FORCE) VALUES ('%s', %d, %d)", room[my_room_number], heating_status, heating_mode);
+"INSERT INTO temperature.Warming_state (room, FLG_ON, FLG_FORCE) VALUES ('%s', %d, %d)", room[my_room_number], heating_status, heating_mode
 
 ## 5.3 Riceve configurazione oraria
 
-sprintf(STRING_SQL, "SELECT * FROM temperature.TermostatSetup WHERE room='%s';", room[my_room_number]);
+"SELECT * FROM temperature.TermostatSetup WHERE room='%s';", room[my_room_number]
 
 La logica PHP aggiorna le tabelle:
 
