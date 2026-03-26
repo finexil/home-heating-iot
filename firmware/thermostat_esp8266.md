@@ -106,7 +106,7 @@ NORMAL    → WARM_STATE
 
 # 5. Comunicazione con il database
 
-L’ESP8266 usa la libreria MySQL_Generic.h di MySQL_MariaDB_Generic nelle funzioni di INSERT, UPDATE e SELECT.
+L’ESP8266 usa la libreria ![MySQL_MariaDB_Generic](https://github.com/khoih-prog/MySQL_MariaDB_Generic) nelle funzioni di INSERT, UPDATE e SELECT.
 
 ## 5.1 Invia temperatura media (ogni 10 minuti)
 
