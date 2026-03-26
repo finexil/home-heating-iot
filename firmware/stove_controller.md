@@ -19,8 +19,8 @@ Il controller:
 
 - legge un **sensore di temperatura acqua** (interruttore termico sul serbatoio della caldaia)
 - determina se la termostufa sta generando calore utile
-- apre una connessione diretta MySQL (via libreria MySQL_MariaDB_Generic)
-- aggiorna lo stato `stove_on` nella tabella `heating_state`
+- apre una connessione diretta MySQL (via libreria ![MySQL_MariaDB_Generic](https://github.com/khoih-prog/MySQL_MariaDB_Generic))
+- aggiorna lo stato `stove_on` nelle tabelle `termostufa` e 'zone_status'
 - aggiorna il flag f1 a on della tabella termostatSetup che permette agli altri dispositivi (termostati, attuatori, caldaia) di riconoscere la modalità “STUFA”
 
 L’MCU **NON comanda direttamente nulla nell’impianto** → fornisce solo lo “stato energia”.
