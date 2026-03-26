@@ -111,7 +111,7 @@ SET pt_soggiorno=1, pt_camera=1, pt_bagno=1 WHERE location='ceresole';
 
 ## 🔍 5.4 Aggiornamento tabella stati (heating_status)
 
-Questa tabella contiene il log delle attivazioni delle zone da parte dei controller
+Questa tabella contiene il log delle attivazioni delle zone da parte dei controller, non è usata da alcun controller per prendere decisioni
 
 ```sql
 INSERT INTO temperature.heating_state
@@ -160,7 +160,7 @@ timeout dopo N fallimenti → spegnimento controllato
 
 # 8. Compatibilità con Extra Heating e Termostufa
 Gli attuatori NON interpretano extra heating o termostufa.
-Leggono semplicemente lo stato impostato dai termostati hella tabella:
+Leggono semplicemente lo stato impostato dai termostati nella tabella:
 
 termostat_warming_request
 
