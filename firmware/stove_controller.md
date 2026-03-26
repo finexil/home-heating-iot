@@ -196,16 +196,18 @@ Se il sensore non risponde:
 - lo stato sarà riallineato al DB e alla condizione della termostufa al ripristino
 
 
-#9. Logging e analisi su heating_state e seriale
+# 9. Logging e analisi su heating_state e seriale
+
 La tabella heating_state integra:
 
-timestamp precisi degli eventi
-stato on/off
-motivazioni (reason)
-stato della caldaia e pompa al momento del log
-eventuali override (extra heating, test manuali…)
+- timestamp precisi degli eventi
+- stato on/off
+- motivazioni (reason)
+- stato della caldaia e pompa al momento del log
+- eventuali override (extra heating, test manuali…)
 
 Questi log permettono di:
+
 ✅ ricostruire il comportamento reale del sistema
 ✅ comprendere l’apporto termico della stufa
 ✅ migliorare algoritmi futuri (es. adattivi)
