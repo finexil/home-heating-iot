@@ -209,7 +209,9 @@ La tabella heating_state integra:
 Questi log permettono di:
 
 ✅ ricostruire il comportamento reale del sistema
+
 ✅ comprendere l’apporto termico della stufa
+
 ✅ migliorare algoritmi futuri (es. adattivi)
 
 # 10. Estensioni future
