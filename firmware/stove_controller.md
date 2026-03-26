@@ -150,37 +150,50 @@ Il delay del loop principale è configurato per cambiare a secnda se la termostu
 
 
 # 7. Interazione con il resto dell’impianto
+
 La termostufa non comanda direttamente lo stato delle zone o la caldaia.
+
 È la logica dei termostati sollecitati tramite il flag f1 della tabella termostatSetup a reagire allo stato stove_on.
+
 ✅ Se stove_on = 1:
 
 I termostati visualizzano l'icona della termostufa e segnalano lo stato on tramite aggiornando la tabella termostat_warming_request
+
 eventuali condizioni di richiesta riscaldamento per impostazione oraria o per extra heating sono bypassate
+
 la pompa di ricircolo locale è gestita secondo i timeout previsti
 
 ✅ Se stove_on = 0:
 
 comportamento normale delle zone
+
 stati termostati per impostazione oraria o per extra heating disponibili
+
 caldaia attivabile come da logica standard
 
 
 # 8. Sicurezze integrate
+
 ✅ Hysteresis anti‑rimbalzo
+
 Evita cicli ON/OFF rapidi in momenti di variazione termica borderline.
+
 ✅ Timeout sensore
+
 Se il sensore non risponde:
 
-mantiene ultimo stato noto per sicurezza
-logga l’errore
-eventuale fallback dopo N errori (stufa OFF)
+- mantiene ultimo stato noto per sicurezza
+
+- logga l’errore
+
+- eventuale fallback dopo N errori (stufa OFF)
 
 ✅ Perdita WiFi
 
-mantiene lo stato locale
-tenta riconnessione ogni 5s
-reboot dell'MCU al protrarsi dell'anomalia e spegnimento di ogni stato nel DB e della circuiteria locale (relè pompo di ricircolo)
-lo stato sarà riallineato al DB e alla condizione della termostufa al ripristino
+- mantiene lo stato locale
+- tenta riconnessione ogni 5s
+- reboot dell'MCU al protrarsi dell'anomalia e spegnimento di ogni stato nel DB e della circuiteria locale (relè pompo di ricircolo)
+- lo stato sarà riallineato al DB e alla condizione della termostufa al ripristino
 
 
 #9. Logging e analisi su heating_state e seriale
