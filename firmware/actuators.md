@@ -37,7 +37,7 @@ Gli attuatori sono **stateless** lato firmware: lo stato finale dipende sempre d
 
 # 3. Connessione Diretta MySQL (importante)
 
-Gli attuatori **NON usano HTTP/PHP**, ma si connettono **direttamente** al server MariaDB.
+Per tutte le MCU basate su ESP8266, la connessione al DB avviene tramite la libreria MySQL_MariaDB_Generic nelle funzioni di INSERT, UPDATE e SELECT.
 
 Libreria tipica:
 MySQL_Connection conn((Client*)&wifi);
