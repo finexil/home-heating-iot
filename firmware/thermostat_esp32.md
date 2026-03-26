@@ -94,7 +94,7 @@ Gestisce tutte le chiamate al DB:
 - SELECT  
 Le stringhe SQL sono memorizzate in una struttura condivisa tra i task
 
-Periodo: **100**
+Periodo: **100 ms**
 
 ---
 
@@ -183,6 +183,10 @@ Utilizzata per le board ESP32 la libreria  ![ESP32_MySQL](https://github.com/Sya
 ## ✅ Ricezione configurazione oraria
 
 "SELECT * FROM temperature.TermostatSetup where room='%s';", room[my_room_number]
+
+Questa tabella contiene l'impostazione oraria e i due flag per le forzature da Extra Heating e Termostufa:
+- Extra Heating F0
+- Termostufa F1
 
 ## ✅ Ricezione Stato e Temperatura Termostati
 
