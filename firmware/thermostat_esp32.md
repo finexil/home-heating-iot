@@ -187,6 +187,7 @@ Utilizzata per le board ESP32 la libreria  ![ESP32_MySQL](https://github.com/Sya
 ## ✅ Ricezione Stato e Temperatura Termostati
 
 "SELECT `pt soggiorno`, `pt camera`, `pt bagno`, `p1 soggiorno`, `p1 camera`, `p1 bagno`, `te terrazzo` FROM temperature.termostat_temp_now WHERE location='%s';", location
+
 "SELECT pt_soggiorno, pt_camera, pt_bagno, p1_soggiorno, p1_camera, p1_bagno, te_terrazzo FROM temperature.zone_status WHERE location='%s';", location
 
 ## ✅ Ricezione previsioni meteo
