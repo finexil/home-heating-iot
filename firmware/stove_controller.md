@@ -129,6 +129,7 @@ UPDATE temperature.TermostatSetup SET f1=1 WHERE room LIKE '%%terrazzo';
 
 # 6. Flusso operativo del firmware
 Ogni 40 ms/6 s:
+
 LOOP PRINCIPALE
     → Leggi temperatura acqua
     → Leggi stato_stufa (gestione hysteresis)
