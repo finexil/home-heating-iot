@@ -174,24 +174,24 @@ Le logiche:
 Utilizzata per le board ESP32 la libreria  ![ESP32_MySQL](https://github.com/Syafiqlim/ESP32_MySQL)
 ## ✅ Invio temperatura, umidità e pressione
 
-sprintf(db_command[pt_stack_db_write].STRING_SQL, "INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f);", room[my_room_number], tf, hf, pf);
+"INSERT INTO temperature.powerDetails (room, Temperature, Humidity, Pressure) VALUES ('%s', %.3f, %.3f, %.3f);", room[my_room_number], tf, hf, pf
 
 ## ✅ Invio stato riscaldamento
 
-sprintf(db_command[pt_stack_db_write].STRING_SQL, "INSERT INTO temperature.Warming_state (room, FLG_ON, FLG_FORCE) VALUES ('%s', %d, %d);", room[my_room_number], heating_status, heating_mode);
+"INSERT INTO temperature.Warming_state (room, FLG_ON, FLG_FORCE) VALUES ('%s', %d, %d);", room[my_room_number], heating_status, heating_mode
 
 ## ✅ Ricezione configurazione oraria
 
-sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT * FROM temperature.TermostatSetup where room='%s';", room[my_room_number]);
+"SELECT * FROM temperature.TermostatSetup where room='%s';", room[my_room_number]
 
 ## ✅ Ricezione Stato e Temperatura Termostati
 
-sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT `pt soggiorno`, `pt camera`, `pt bagno`, `p1 soggiorno`, `p1 camera`, `p1 bagno`, `te terrazzo` FROM temperature.termostat_temp_now WHERE location='%s';", location);
-sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT pt_soggiorno, pt_camera, pt_bagno, p1_soggiorno, p1_camera, p1_bagno, te_terrazzo FROM temperature.zone_status WHERE location='%s';", location);
+"SELECT `pt soggiorno`, `pt camera`, `pt bagno`, `p1 soggiorno`, `p1 camera`, `p1 bagno`, `te terrazzo` FROM temperature.termostat_temp_now WHERE location='%s';", location
+"SELECT pt_soggiorno, pt_camera, pt_bagno, p1_soggiorno, p1_camera, p1_bagno, te_terrazzo FROM temperature.zone_status WHERE location='%s';", location
 
 ## ✅ Ricezione previsioni meteo
 
-sprintf(db_command[pt_stack_db_write].STRING_SQL, "SELECT temperature, wind_speed, icon, description FROM weather.forecasts WHERE timestamp = (SELECT MIN(timestamp) FROM weather.forecasts WHERE timestamp > CURRENT_TIMESTAMP());");
+"SELECT temperature, wind_speed, icon, description FROM weather.forecasts WHERE timestamp = (SELECT MIN(timestamp) FROM weather.forecasts WHERE timestamp > CURRENT_TIMESTAMP());"
 
 ---
 
