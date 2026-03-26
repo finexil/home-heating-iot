@@ -37,7 +37,7 @@ Gli attuatori sono **stateless** lato firmware: lo stato finale dipende sempre d
 
 # 3. Connessione Diretta MySQL (importante)
 
-Per tutte le MCU basate su ESP8266, la connessione al DB avviene tramite la libreria MySQL_MariaDB_Generic nelle funzioni di INSERT, UPDATE e SELECT.
+Per tutte le MCU basate su ESP8266, la connessione al DB avviene tramite la libreria ![MySQL_MariaDB_Generic](https://github.com/khoih-prog/MySQL_MariaDB_Generic) nelle funzioni di INSERT, UPDATE e SELECT.
 
 Libreria tipica:
 MySQL_Connection conn((Client*)&wifi);
@@ -50,7 +50,7 @@ All’avvio:
 3. autenticazione con **utente dedicato** che ha solo privilegi:
    - `SELECT`  
    - `UPDATE`  
-   - (eventualmente `INSERT` per log)  
+   - `INSERT` per tabella log  
 
 L’utente NON ha alcun privilegio di alterazione o lettura di tabelle sensibili.
 
