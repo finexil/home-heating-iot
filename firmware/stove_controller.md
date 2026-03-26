@@ -71,7 +71,9 @@ Per tutte le MCU basate su ESP8266, la connessione al DB avviene tramite la libr
 Permessi dell’utente DB:
 
 SELECT
+
 INSERT → log termostufa
+
 UPDATE → aggiornamento stato
 
 Nessun altro permesso.
