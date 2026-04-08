@@ -10,19 +10,33 @@ logico del sistema senza entrare nel dettaglio implementativo del codice.
 
 # 1. Diagramma generale del sistema
 ┌───────────────┐
+
 │  Termostati   │
+
 │ ESP8266/ESP32 │
+
 └───────┬───────┘
+
         │
+        
         │ INSERT / UPDATE
+        
         ▼
+        
 ┌──────────────────────────┐
+
 │        Database          │
+
 │  (MariaDB + Trigger)     │
+
 └───────┬─────────┬────────┘
+
         │         │
+        
         │         │
+        
         ▼         ▼
+        
 ┌─────────────┐  ┌──────────────────┐
 │  Attuatori  │  │ Algoritmi Server │
 │ Elettroval. │  │  (Raspberry Pi)  │
