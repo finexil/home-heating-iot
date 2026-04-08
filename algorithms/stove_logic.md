@@ -28,7 +28,7 @@ Il suo stato è propagato tramite il database.
 Il controller termostufa:
 
 - legge la temperatura dell’acqua nel serbatoio caldaia
-- applica hysteresis (es. ON > 60°C, OFF < 55°C)
+- applica hysteresis ON > 60°C, OFF < 55°C
 - aggiorna il campo `termostufa` nella tabella `zone_status` e il flag `f1` nella tabella `termostatSetup`
 
 Il server **non misura direttamente** la termostufa,
@@ -69,7 +69,7 @@ Questa priorità è **rigida** e applicata in ogni ciclo decisionale.
 Quando la termostufa è attiva:
 
 ✅ la caldaia elettrica è **forzata OFF** dal sistema di regolazione interno che si accorge avere una fonte di `energia` esterna 
-✅ l’Extra Heating è **ignorato**  
+✅ l’Extra Heating è **ignorato** fintanto che la termostufa è attiva
 ✅ la pompa di ricircolo della termostufa è attiva, mentre quella della caldaia è attiva in base allo stato delle zone della casa  
 ✅ i termostati visualizzano l’icona **STUFA**  
 ✅ le zone vengono scaldate solo se la temperatura locale registrata è sotto soglia (22°C)
@@ -83,8 +83,8 @@ Quando la termostufa è spenta:
 
 - il sistema ritorna alla logica normale
 - Extra Heating può attivarsi
-- la caldaia elettrica è disponibile
-- le zone seguono la configurazione oraria
+- la caldaia elettrica è disponibile alle logiche dei termostati e dell'eventuale Extra Heating
+- le zone seguono la configurazione oraria della tabella termostatSetup
 
 ---
 
