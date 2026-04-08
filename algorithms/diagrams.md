@@ -19,24 +19,20 @@ logico del sistema senza entrare nel dettaglio implementativo del codice.
                            ┌──────────────────────────┐
                            │        Database          │
                            │  (MariaDB + Trigger)     │
-                           └───────┬─────────┬────────┘
-
-        │         │
-        
-        │         │
-        
-        ▼         ▼
-        
-┌─────────────┐  ┌──────────────────┐
-│  Attuatori  │  │ Algoritmi Server │
-│ Elettroval. │  │  (Raspberry Pi)  │
-└──────┬──────┘  └─────────┬────────┘
-       │                   │
-       ▼                   ▼
-┌─────────────┐     ┌───────────────┐
-│   Pompa     │     │ Extra Heating │
-│ + Caldaia   │     │ Termostufa    │
-└─────────────┘     └───────────────┘
+                           └───┬──────────────────┬───┘
+                               │                  │        
+                               │                  │        
+                               ▼                  ▼        
+                        ┌─────────────┐  ┌──────────────────┐
+                        │  Attuatori  │  │ Algoritmi Server │
+                        │ Elettroval. │  │  (Raspberry Pi)  │
+                        └──────┬──────┘  └────────┬─────────┘
+                               │                  │
+                               ▼                  ▼
+                        ┌─────────────┐   ┌───────────────┐
+                        │   Pompa     │   │ Extra Heating │
+                        │ + Caldaia   │   │ Termostufa    │
+                        └─────────────┘   └───────────────┘
 
 ---
 
