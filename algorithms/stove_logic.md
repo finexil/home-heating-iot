@@ -54,9 +54,9 @@ La logica termostufa utilizza principalmente:
 
 La gerarchia delle fonti di calore è:
 
-1. 🔥 **Termostufa**
-2. ☀️ **Extra Heating (fotovoltaico)**
-3. ⚡ **Caldaia elettrica**
+1. <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/53d6b121-8ec9-4bc0-9891-884fe79045de" /> **Termostufa**
+2. <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/6389740f-86ea-4227-b1d1-031ebf1e72d3" **Extra Heating (fotovoltaico)**
+3. <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" />  **Caldaia elettrica**
 
 Questa priorità è **rigida** e applicata in ogni ciclo decisionale.
 
@@ -97,7 +97,7 @@ Quando `stove_on = 1`:
   - configurazione oraria tra cui i flag f0 (Extra Heating) e f1 (Temostufa)
   - forzature locali
   - limite massimo di temperatura
-- mostrano però l’icona **🪵 STUFA** per indicare la fonte del calore qualora la temperatura locale sia sotto soglia massima
+- mostrano però l’icona **<img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/53d6b121-8ec9-4bc0-9891-884fe79045de" /> STUFA** per indicare la fonte del calore qualora la temperatura locale sia sotto soglia massima
 
 Questo evita confusione per l’utente finale.
 
