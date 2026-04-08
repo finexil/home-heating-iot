@@ -10,10 +10,8 @@ Questa cartella contiene tutti gli schemi elettrici e i riferimenti hardware deg
 ## 🔧 Controller
 - ![Controller elettrovalvole (ESP8266 Lolin D1 Mini Lite)](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Controller_Elettrovalvole.png)
 - ![Controller caldaia](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Controller_caldaia.png)
-- ![Controller termostufa](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/Controller_Termostufa.jng)
+- ![Controller termostufa](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/Controller_Termostufa.jpg)
 
 ## 🔋 Alimentazione
 L'alimentatore di tutti gli elementi (Termostati e Controller) è centralizzata tramite un alimentatore switching che eroga 5V e 12V con corrente massima di 5A. Tutte le schede sono collegate all'alimentatore con cavo multicoppia steso in canalina. Questa soluzione permette di evitare l'uso di batterie per ogni sistema locale.
 
-## 🖼️ Schemi elettrici
-Gli schemi sono presenti nella sotto-cartella `hardware/` e possono essere inclusi nella documentazione tecnica.
