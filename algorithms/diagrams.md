@@ -13,25 +13,25 @@ logico del sistema senza entrare nel dettaglio implementativo del codice.
 │  Termostati   │
 │ ESP8266/ESP32 │
 └───────┬───────┘
-│
-│ INSERT / UPDATE
-▼
+        │
+        │ INSERT / UPDATE
+        ▼
 ┌──────────────────────────┐
 │        Database          │
 │  (MariaDB + Trigger)     │
 └───────┬─────────┬────────┘
-│         │
-│         │
-▼         ▼
+        │         │
+        │         │
+        ▼         ▼
 ┌─────────────┐  ┌──────────────────┐
 │  Attuatori  │  │ Algoritmi Server │
 │ Elettroval. │  │  (Raspberry Pi)  │
 └──────┬──────┘  └─────────┬────────┘
-│                   │
-▼                   ▼
+       │                   │
+       ▼                   ▼
 ┌─────────────┐     ┌───────────────┐
 │   Pompa     │     │ Extra Heating │
-│ + Caldaia  │     │ Termostufa     │
+│ + Caldaia   │     │ Termostufa    │
 └─────────────┘     └───────────────┘
 
 ---
