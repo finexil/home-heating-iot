@@ -9,7 +9,7 @@ These routines process real-time telemetry, local storage persistence tables, an
 
 ## 📌 Core Architectural Systems
 
-'''text
+```text
           [SolarEdge API]          [MariaDB Caching]         [OpenWeather API]                        
                  │                         │                         │
                  ▼                         ▼                         ▼
@@ -17,7 +17,7 @@ These routines process real-time telemetry, local storage persistence tables, an
       │ Extra Heating Engine │  │ Biomass Hybrid Logic │  │ Thermal Inertia Map  │
       │(Solar Self-Consump.) │  │(Water Loop Overrides)│  │(Envelope Predictor)  │
       └──────────────────────┘  └──────────────────────┘  └──────────────────────┘
-'''
+```
 The system automation behavior is driven by three decoupled core logical modules:
 
 ### 1. The "Extra Heating" Engine (Solar Self-Consumption)
