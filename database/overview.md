@@ -100,6 +100,8 @@ The centralized Python scripts running on the Raspberry Pi core perform deep dat
 
 
 ## 4. System Topology & Data Flow Map
+
+```text
 ┌────────────────────┐
             │     Termostats     │
             │ ESP8266 / ESP32    │
@@ -138,7 +140,7 @@ The centralized Python scripts running on the Raspberry Pi core perform deep dat
                  ┌───────────────────────────────┐
                  │   Algoritmi Raspberry Pi      │
                  └───────────────────────────────┘
-
+```
 
 ## 5. Architectural Design Rationale
 
