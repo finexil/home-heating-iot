@@ -1,6 +1,7 @@
 # Infrastructure Hardware & Electrical Blueprint Specifications
 
-🇮🇹 *Per la versione in italiano, fai riferimento al file originale.*
+🇮🇹 *Per la versione in italiano, clicca [qui](README.md).*
+
 
 This directory compiles the complete electrical blueprints, schematic layouts, component architectures, and power distribution parameters constituting the physical layer of the Home Heating IoT ecosystem.
 
