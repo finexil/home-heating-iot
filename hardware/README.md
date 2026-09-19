@@ -15,7 +15,7 @@ These peripheral sensing stations house the ambient monitoring sensors and the g
 
 ### 🔹 Compact Thermostat Node (ESP8266 + 1.8" SPI Display)
 **Target Schematics:** Deployed across secondary bedrooms and high-humidity bathroom spaces.
-![ESP8266 con display 1.8”]([https://githubusercontent.com](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Display_1_8_INCH.png))
+- ![ESP8266 con display 1.8”]([https://githubusercontent.com](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Display_1_8_INCH.png))
 
 ### 🔹 Premium Touch Terminal (ESP32 + 3.5" TFT Touchscreen)
 *   **Target Schematics:** Deployed across main open-plan living zones and balcony loops.
