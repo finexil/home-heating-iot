@@ -1,4 +1,6 @@
 # home-heating-iot
+🇬🇧 *For the English version, click [here](README.md).*
+
 Sistema DIY per la gestione del riscaldamento domestico con ESP8266, ESP32 e Raspberry Pi
 
 # Il tuo IoT per il riscaldamento di casa: ESP, Raspberry Pi e algoritmi intelligenti
