@@ -1,3 +1,4 @@
+markdown
 # Database Schema & Data Models – Home Heating IoT
 
 The MariaDB database engine serves as the absolute logical core of the entire smart heating automation infrastructure.  
