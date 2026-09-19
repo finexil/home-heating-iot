@@ -1,5 +1,6 @@
 markdown
 # Database Triggers (SQL DDL)
+🇮🇹 *Per la versione in italiano, clicca [qui](triggers.it.md).*
 
 To minimize network traffic and remove heavy computational strain from low-power ESP8266 and ESP32 edge nodes, this architecture leverages native **MariaDB Server-Side Triggers**. 
 
