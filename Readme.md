@@ -22,10 +22,10 @@ Managing a modern hybrid heating system requires orchestrating multiple thermal 
 ## 🏗️ System Architecture
 The layout isolates edge sensing and actuation from the central data persistence layer across three main hardware tiers:
 
-┌──────────────────┐       ┌─────────────────┐       ┌──────────────────────┐
-│ Nodi Periferici  │ ───>  │ Database Locale │  ───> │ Algoritmi Analitici  │
-│ (ESP8266 / ESP32)│       │ (Raspberry Pi)  │       │(Surplus / Previsioni)│
-└──────────────────┘       └─────────────────┘       └──────────────────────┘
+┌──────────────────────────┐        ┌─────────────────────────┐         ┌──────────────────────────────┐
+│      Nodi Periferici     │ ─────> │     Database Locale     │  ─────> │     Algoritmi Analitici      │
+│     (ESP8266 / ESP32)    │        │      (Raspberry Pi)     │         │    (Surplus / Previsioni)    │
+└──────────────────────────┘        └─────────────────────────┘         └──────────────────────────────┘
 
 1. **Distributed Thermostats (ESP8266 & ESP32):** Edge processing nodes handling human-machine interface (HMI), sensor sampling, and localized control loops.
 2. **Zone & Generation Controllers (ESP8266):** Actuator units driving manifold electrovalves, boiler relays, and pump circulation circuits.
