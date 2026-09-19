@@ -15,12 +15,12 @@ These peripheral sensing stations house the ambient monitoring sensors and the g
 
 ### 🔹 Compact Thermostat Node (ESP8266 + 1.8" SPI Display)
 - **Target Schematics:** Deployed across secondary bedrooms and high-humidity bathroom spaces.
-- ![ESP8266 con display 1.8”]([https://githubusercontent.com](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Display_1_8_INCH.png))
+- ![ESP8266 con display 1.8”](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Display_1_8_INCH.png)
 
 ### 🔹 Premium Touch Terminal (ESP32 + 3.5" TFT Touchscreen)
-*   **Target Schematics:** Deployed across main open-plan living zones and balcony loops.
-*   **Visual Blueprint Asset:**
-    ![ESP32 con display 3.5” touch]([https://githubusercontent.com](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP32_Display_3_5_INCH_TOUCH.png))
+- **Target Schematics:** Deployed across main open-plan living zones and balcony loops.
+- **Visual Blueprint Asset:**
+    ![ESP32 con display 3.5” touch](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP32_Display_3_5_INCH_TOUCH.png)
 
 ---
 
@@ -31,17 +31,17 @@ Edge actuation stations responsible for physical load execution, mechanical prot
 ### 🔹 Hydronic Manifold Actuator Node (ESP8266 Lolin D1 Mini Lite)
 *   **Target Schematics:** Drives high-voltage 230V slow-actuation zone electrovalves via isolated low-voltage transistor grids.
 *   **Visual Blueprint Asset:**
-    ![Controller elettrovalvole ([ESP8266 Lolin D1 Mini Lite)](https://githubusercontent.com](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Controller_Elettrovalvole.png))
+    ![Controller elettrovalvole ([ESP8266 Lolin D1 Mini Lite)](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Controller_Elettrovalvole.png)
 
 ### 🔹 Central Boiler Plant Node (ESP8266 NodeMCU 12-E)
 *   **Target Schematics:** Coordinates the primary electric heat pump compressor banks and manifold distribution pump relays.
 *   **Visual Blueprint Asset:**
-    ![Controller caldaia]([https://githubusercontent.com](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Controller_caldaia.png))
+    ![Controller caldaia](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/ESP8266_Controller_caldaia.png)
 
 ### 🔹 Hybrid Biomass Thermo-Stove Monitor (ESP32 D1 Mini)
 *   **Target Schematics:** Tracks high-temperature water jacket immersion variables and triggers local return pumps.
 *   **Visual Blueprint Asset:**
-    ![Controller termostufa]([https://githubusercontent.com](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/Controller_Termostufa.jpg))
+    ![Controller termostufa](https://raw.githubusercontent.com/finexil/home-heating-iot/main/docs/images/Controller_Termostufa.jpg)
 
 ---
 
