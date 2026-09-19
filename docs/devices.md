@@ -55,9 +55,9 @@ The combination of these parameters establishes the target configuration value c
 ### 1.4 User Interface States & Icon Mapping
 The screen buffer updates dynamic graphical icons to communicate the active thermodynamic source supplying energy into the zone:
 
-* <img width="40" height="39" alt="image" src="https://github.com" /> **Red Flame** — Standard local room heat request calculated against local scheduler tables.
-* <img width="39" height="39" alt="image" src="https://github.com" /> **Yellow Flame** — Automated *Extra Heating* sequence driven by real-time solar photovoltaic net surplus.
-* <img width="39" height="39" alt="image" src="https://github.com" /> **Thermo-Stove** — Hot water loops supplied entirely by active biomass fuel sources.
+* <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" /> **Red Flame** — Standard local room heat request calculated against local scheduler tables.
+* <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/6389740f-86ea-4227-b1d1-031ebf1e72d3" /> **Yellow Flame** — Automated *Extra Heating* sequence driven by real-time solar photovoltaic net surplus.
+* <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/53d6b121-8ec9-4bc0-9891-884fe79045de" /> **Thermo-Stove** — Hot water loops supplied entirely by active biomass fuel sources.
 
 > ⚠️ **Overheating Protection Constraints:** Both *Extra Heating* and *Thermo-Stove* configurations force global hydraulic deployment. However, the localized edge firmware automatically blocks flow delivery to individual spaces if ambient room readings cross a strict **22°C ceiling**.
 
