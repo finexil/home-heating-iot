@@ -15,9 +15,9 @@ Each peripheral manifold controller runs an autonomous execution loop:
 *   ✅ Spawns a direct TCP/IP **MySQL/MariaDB connection** targeting the central Raspberry Pi server.
 *   ✅ Executes raw SQL query transactions to pull real-time zone requirements.
 *   ✅ Directs onboard relay channels driving the 230V slow-actuating manifold electrovalves.
-*   │ Updates verified physical execution parameters back into the `zone_status` schema.
-*   │ Applies software protective constraints and hardware-protective timeout loops.
-*   │ Self-heals local runtime failures during transient network dropouts.
+*   ✅ Updates verified physical execution parameters back into the `zone_status` schema.
+*   ✅ Applies software protective constraints and hardware-protective timeout loops.
+*   ✅ Self-heals local runtime failures during transient network dropouts.
 
 > 🧠 **Stateless Firmware Principle:** Actuator edge units maintain no persistent logic states locally. The true intended system target always resides inside the central database layer.
 
