@@ -1,5 +1,5 @@
 
-markdown# Automation Algorithms & Predictive Logic
+# Automation Algorithms & Predictive Logic
 
 This directory documents the mathematical frameworks, state machines, and predictive background routines executed by the central Python 3 automation engine on the Raspberry Pi. 
 
