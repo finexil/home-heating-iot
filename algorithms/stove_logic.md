@@ -50,9 +50,9 @@ The biomass routine tracks environmental variables across the following persiste
 
 The system enforces a rigid thermal priority framework during every algorithmic decision cycle:
 
-1. <img width="39" height="39" alt="image" src="https://github.com" /> **Biomass Thermo-Stove** (Zero operational grid cost - High priority)
-2. <img width="39" height="39" alt="image" src="https://github.com" /> **Extra Heating** (Solar photovoltaic micro-generation surplus)
-3. <img width="40" height="39" alt="image" src="https://github.com" /> **Primary Plant** (Electric Heat Pump / Boiler - Standard grid tariff)
+1. <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/53d6b121-8ec9-4bc0-9891-884fe79045de" /> **Biomass Thermo-Stove** (Zero operational grid cost - High priority)
+2. <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/6389740f-86ea-4227-b1d1-031ebf1e72d3" /> **Extra Heating** (Solar photovoltaic micro-generation surplus)
+3. <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/d97f6b0c-e857-4e03-8112-6adf18e54451" /> **Primary Plant** (Electric Heat Pump / Boiler - Standard grid tariff)
 
 ---
 
