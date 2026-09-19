@@ -1,5 +1,6 @@
 markdown
 # Database Schema & Data Models – Home Heating IoT
+🇮🇹 *Per la versione in italiano, clicca [qui](schema.it.md).*
 
 The MariaDB database engine serves as the absolute logical core of the entire smart heating automation infrastructure.  
 Distributed microcontrollers (ESP8266 and ESP32 edge nodes) execute targeted SQL operations against this schema to orchestrate ambient thermostats, manifold valve actuators, the centralized boiler plant, the hybrid biomass thermo-stove, and edge optimization algorithms.
