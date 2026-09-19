@@ -1,5 +1,6 @@
 markdown
 # Database Architecture Overview – Home Heating IoT
+🇮🇹 *Per la versione in italiano, clicca [qui](overview.it.md).*
 
 This document provides a comprehensive structural overview of the MariaDB database engine powering the Home Heating IoT ecosystem.  
 It serves as the core architectural baseline that glues together the following technical references:
